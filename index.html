@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RandomDogs</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"></script>
+    <script src="image_fetch.js"></script>
+    <script src="image_jquery.js"></script>
+    <script src="image_XMLHttpRequest.js"></script>
+</head>
+<body>
+<button class="button_blue" onclick="render_image_fetch();">Fetch</button>
+<button class="button_coral" onclick="render_image_jquery();">jQuery</button>
+<button class="button_seagreen" onclick="render_image_XMLHttpRequest();">XMLHttpRequest</button>
+<style>
+    .button_blue {
+        background-color: lightblue;
+        color: white;
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    .button_coral {
+        background-color: lightcoral;
+        color: white;
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    .button_seagreen {
+        background-color: lightseagreen;
+        color: white;
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+    }
+</style>
+</body>
+</html>
