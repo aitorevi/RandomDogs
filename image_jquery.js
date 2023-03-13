@@ -7,16 +7,16 @@
 *
 */
 
-function render_image_jquery() {
-
+// Activar la extensión Allow Cors de Chrome antes de ejecutar esta función
+async function render_image_jquery() {
     $.ajax({
-        url: 'https://dog.ceo/api/breeds/image/random',
+        url: 'http://localhost:3000',
         method: 'GET',
         dataType: 'json',
-        success: function(response) {
-            console.log(response.message);
+        success: await function(response) {
+            console.log(response.url); // Comprobar lo que devuelve en consola, se puede eliminar
             const my_image = document.createElement("img");
-            my_image.src = response.message;
+            my_image.src = response.url;
             my_image.height = 300;
             document.body.append(my_image);
         },
@@ -24,5 +24,4 @@ function render_image_jquery() {
             console.log(error);
         }
     })
-
 }

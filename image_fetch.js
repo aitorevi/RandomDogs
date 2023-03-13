@@ -7,13 +7,13 @@
 *
 */
 
-function render_image_fetch() {
-    fetch(`https://dog.ceo/api/breeds/image/random`)
-        .then(response => response.json())
-        .then(response => {
-            const my_image = document.createElement("img");
-            my_image.src = response.message;
-            my_image.height = 300;
-            document.body.append(my_image);
-        })
+// Activar la extensión Allow Cors de Chrome antes de ejecutar esta función
+async function render_image_fetch() {
+    const data = await fetch(`http://localhost:3000`)
+        .then(res => res.json())
+        console.log(data.url)  // Comprobar lo que devuelve en consola, se puede eliminar
+        const my_image = document.createElement("img");
+        my_image.src = data.url;
+        my_image.height = 300;
+        document.body.append(my_image);
 }

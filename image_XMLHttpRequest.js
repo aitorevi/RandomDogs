@@ -7,16 +7,18 @@
 *
 */
 
-function render_image_XMLHttpRequest() {
+// Activar la extensión Allow Cors de Chrome antes de ejecutar esta función
+async function render_image_XMLHttpRequest() {
     const response = new XMLHttpRequest();
-    response.onreadystatechange = function() {
-        if (response.readyState == XMLHttpRequest.DONE) {
+    response.onreadystatechange = await function() {
+        if (response.readyState === XMLHttpRequest.DONE) {
+            console.log(JSON.parse(response.response).url); // Comprobar lo que devuelve en consola, se puede eliminar
             const my_image = document.createElement("img");
-            my_image.src = JSON.parse(response.response).message;
+            my_image.src = JSON.parse(response.response).url;
             my_image.height = 300;
             document.body.append(my_image);
         }
     }
-    response.open('GET', 'https://dog.ceo/api/breeds/image/random', true);
+    response.open('GET', 'http://localhost:3000', true);
     response.send(null);
 }
